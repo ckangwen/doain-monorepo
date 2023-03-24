@@ -1,0 +1,19 @@
+{
+  "extends": "../tsconfig.json",
+  "include": [
+    "./client/**/*.ts",
+    "./components/**/*.ts",
+    "./composables/**/*.ts",
+    "./config/**/*.ts",
+    "./core/**/*.ts",
+    "./node/**/*.ts",
+    "./toolkit/**/*.ts",
+    "./*.d.ts"
+  ],
+  "compilerOptions": {
+    "types": [
+      "@charrue/vite-plugin-vue-layouts/client",
+      "@charrue/vite-plugin-pages/client",
+    ]
+  }
+}

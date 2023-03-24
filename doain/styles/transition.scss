@@ -1,0 +1,14 @@
+.doain-zoom-fade-enter-active,
+.doain-zoom-fade-leave-active {
+  transition: transform 0.2s, opacity 0.3s ease-out;
+}
+
+.doain-zoom-fade-enter-from {
+  opacity: 0;
+  transform: scale(0.92);
+}
+
+.doain-zoom-fade-leave-to {
+  opacity: 0;
+  transform: scale(1.06);
+}

@@ -1,0 +1,15 @@
+:root {
+  --cl-sidebar-bg: var(--el-fill-color-blank);
+  --cl-sidebar-border-color: transparent;
+  --cl-sidebar-text-color: var(--el-text-color-primary);
+  --cl-sidebar-hover-text-color: var(--cl-sidebar-text-color);
+  --cl-sidebar-hover-bg: var(--el-color-primary-light-9);
+  --cl-sidebar-active-text-color: var(var(--el-color-primary));
+  --cl-sidebar-active-bg: var(--el-color-primary-light-9);
+  --cl-sidebar-submenu-text-color: var(--cl-sidebar-text-color);
+  --cl-sidebar-submenu-bg: var(--cl-sidebar-bg);
+  --cl-sidebar-submenu-hover-text-color: var(--cl-sidebar-hover-text-color);
+  --cl-sidebar-submenu-hover-bg: var(--cl-sidebar-hover-bg);
+  --cl-sidebar-submenu-active-text-color: var(--cl-sidebar-active-text-color);
+  --cl-sidebar-submenu-active-bg: var(--cl-sidebar-active-bg);
+}

@@ -1,0 +1,18 @@
+{
+  "extends": "@vue/tsconfig/tsconfig.web.json",
+  "compilerOptions": {
+    "baseUrl": ".",
+    "skipLibCheck": true,
+    "paths": {
+      "@/*": ["src/*"],
+      "~utils": ["src/utils"],
+      "~components": ["src/components"],
+    },
+    "types": [
+      "doain/client",
+    ]
+  },
+  "include": ["./src/**/*.ts", "./src/**/*.d.ts", "./src/**/*.tsx", "./src/**/*.vue", "./*.ts",],
+  "exclude": ["node_modules"],
+  "references": [{ "path": "./tsconfig.vite-config.json" }]
+}
