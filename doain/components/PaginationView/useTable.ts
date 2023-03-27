@@ -1,25 +1,16 @@
 import { watchThrottled } from "@vueuse/core";
-import { ElNotification } from "element-plus";
-import { ComputedRef, shallowRef } from "vue";
+import { ComputedRef, shallowRef, watch } from "vue";
 import { useRoute, useRouter } from "vue-router";
 
 import { useProp } from "../../composables/index";
 import { httpClient } from "../../core/index";
+import { showSingleNotify } from "../../toolkit/showNotify";
 
 interface QueryData {
   page?: number;
   limit?: number;
   [key: string]: any;
 }
-
-const showMessage = (msg: string, suc: boolean) => {
-  ElNotification({
-    title: "提示",
-    message: msg,
-    type: suc ? "success" : "error",
-    duration: 1500,
-  });
-};
 
 export const useTable = (queryData?: ComputedRef<Record<string, any>>) => {
   const shouldPagination = useProp("pagination", true);
@@ -79,11 +70,11 @@ export const useTable = (queryData?: ComputedRef<Record<string, any>>) => {
     }
     if (success === false && !error) {
       reset();
-      showMessage(message, false);
+      showSingleNotify(message, "warning");
     }
     if (error) {
       reset();
-      showMessage("网络错误", false);
+      showSingleNotify("网络错误", "error");
     }
   };
 
@@ -94,6 +85,18 @@ export const useTable = (queryData?: ComputedRef<Record<string, any>>) => {
     },
     {
       throttle: 200,
+      deep: true,
+    },
+  );
+  watch(
+    () => route.query,
+    () => {
+      page.value = Number(route.query.page) || 1;
+      pageSize.value = Number(route.query.size) || 10;
+      fetchData();
+    },
+    {
+      immediate: true,
       deep: true,
     },
   );
@@ -124,7 +127,6 @@ export const useTable = (queryData?: ComputedRef<Record<string, any>>) => {
         page: p,
       },
     });
-    // fetchData();
   };
 
   return {

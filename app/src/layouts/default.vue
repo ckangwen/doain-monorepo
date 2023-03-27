@@ -1,7 +1,11 @@
 <script lang="ts" setup>
-import { DefaultLayout } from "doain/components";
+import { DefaultLayout, GlobalHeaderRight } from "doain/components";
 </script>
 
 <template>
-  <DefaultLayout />
+  <DefaultLayout>
+    <template #header-right>
+      <GlobalHeaderRight />
+    </template>
+  </DefaultLayout>
 </template>

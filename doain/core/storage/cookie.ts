@@ -13,4 +13,11 @@ export const cookieStorage = {
     Cookie.set(`${userDoainConfig.app.appKey}_${key}`, value, option),
   remove: (key: string, option?: CookieAttributes) =>
     Cookie.remove(`${userDoainConfig.app.appKey}_${key}`, option),
+
+  removeAll: () => {
+    const cookies = Cookie.get();
+    Object.keys(cookies).forEach((key) => {
+      Cookie.remove(key);
+    });
+  },
 };

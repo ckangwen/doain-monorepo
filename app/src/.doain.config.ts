@@ -39,7 +39,7 @@ export default defineClientConfig({
   },
   component: {
     upload: {
-      url: "http://150.158.181.150/api/mock-api/tool/upimg",
+      url: "http://localhost:8010/mock-api/tool/upimg",
       transformImageUrl(data: Record<string, any>) {
         return data.url;
       },
@@ -70,7 +70,7 @@ export default defineClientConfig({
     },
   },
   fetch: {
-    baseUrl: "http://150.158.181.150/api/mock-api/",
+    baseUrl: "http://localhost:8010/mock-api/",
     tokenWhiteList: [LOGIN_URL],
     fetchUserInfo() {
       return httpClient.limitRepeatedRequest({

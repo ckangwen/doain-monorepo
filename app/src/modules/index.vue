@@ -6,7 +6,9 @@ const imageUrl = "https://s2.loli.net/2023/01/12/a4ImQMsgHkbxtJL.jpg";
 
 <template>
   <PageContainer>
-    <DUpload v-model="imageUrl" />
-    <i-custom-box />
+    <div style="height: 1000px">
+      <DUpload v-model="imageUrl" />
+      <i-custom-box />
+    </div>
   </PageContainer>
 </template>

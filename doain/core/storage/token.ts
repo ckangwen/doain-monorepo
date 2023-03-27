@@ -1,4 +1,7 @@
-import { lStorage } from "./storage";
+import userDoainConfig from "~doain/config";
+
+import { lStorage, sStorage } from "./storage";
+import { cookieStorage } from "./cookie";
 
 export const TOKEN_STORAGE_KEY = "APP_TOKEN";
 
@@ -12,4 +15,21 @@ export const removeToken = () => {
   lStorage.remove(TOKEN_STORAGE_KEY);
 };
 
-// TODO: 接口变化后，需要重置token
+const UNIQUE_VALUE_STORAGE_KEY = `${
+  userDoainConfig.app.storageKey || userDoainConfig.app.appKey
+}.unique.key`;
+
+/**
+ * @description 保证环境唯一性, 用于多个环境共用一个浏览器时, 清除storage
+ * @param uniqueValue {string} 唯一值, 可以使用接口的基础路径
+ */
+export const ensureUniqueEnv = (uniqueValue: string, backLoginPage: () => void) => {
+  const storageValue = lStorage.get(UNIQUE_VALUE_STORAGE_KEY);
+  if (storageValue !== uniqueValue) {
+    cookieStorage.removeAll();
+    sStorage.clearAll();
+    lStorage.clearAll();
+    lStorage.set(UNIQUE_VALUE_STORAGE_KEY, uniqueValue);
+    backLoginPage();
+  }
+};

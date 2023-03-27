@@ -1,0 +1,41 @@
+.global-header-right-area {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  margin-left: 12px;
+
+  .header-action {
+    color: #606266;
+    padding: 14px 12px;
+    border-radius: 4px;
+    margin: 0;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border: 0;
+    transform: 0.1s;
+    background: transparent;
+    cursor: pointer;
+    appearance: none;
+    font-weight: 500;
+
+    &:hover {
+      color: var(--doain-primary-color);
+      background: #ebf1f6;
+    }
+
+    .el-dropdown {
+      margin-left: 16px;
+
+      >div {
+        cursor: pointer;
+        padding: 4px 0;
+
+        >.login-name {
+          font-size: 14px;
+          font-weight: 500;
+        }
+      }
+    }
+  }
+}
