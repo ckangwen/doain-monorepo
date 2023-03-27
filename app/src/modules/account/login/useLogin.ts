@@ -10,7 +10,7 @@ const formSchema = createSchemaPipeline(
   }),
   createInputSchema("password", "密码", {
     uiProps: {
-      placeholder: "请输入手机号",
+      placeholder: "请输入密码",
       type: "password",
       showPassword: true,
     },
