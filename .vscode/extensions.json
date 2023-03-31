@@ -1,0 +1,13 @@
+{
+  "recommendations": [
+    "foam.foam-vscode",
+    "dbaeumer.vscode-eslint",
+    "esbenp.prettier-vscode",
+    "streetsidesoftware.code-spell-checker",
+    "bierner.markdown-preview-github-styles",
+    "davidanson.vscode-markdownlint",
+    "yzhang.markdown-all-in-one",
+    "ms-vsliveshare.vsliveshare",
+    "antfu.file-nesting"
+  ]
+}
