@@ -64,7 +64,7 @@ const loginPageMeta = {
                 <div class="flex-initial">
                   <el-checkbox>自动登录</el-checkbox>
                 </div>
-                <el-button link>忘记密码?</el-button>
+                <el-button type="primary" link>忘记密码?</el-button>
               </div>
             </el-form-item>
             <el-form-item>

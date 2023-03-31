@@ -23,19 +23,14 @@
       color: var(--doain-primary-color);
       background: #ebf1f6;
     }
+  }
 
-    .el-dropdown {
-      margin-left: 16px;
+  .el-dropdown {
+    margin-left: 16px;
 
-      >div {
-        cursor: pointer;
-        padding: 4px 0;
-
-        >.login-name {
-          font-size: 14px;
-          font-weight: 500;
-        }
-      }
+    .login-name {
+      font-size: 14px;
+      font-weight: 500;
     }
   }
 }

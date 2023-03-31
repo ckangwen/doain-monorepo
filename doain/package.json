@@ -66,7 +66,6 @@
     "@charrue/node-toolkit": "^0.4.0",
     "@charrue/schema-form-next": "^1.2.1",
     "@charrue/schema-table-next": "^1.0.3",
-    "@charrue/toolkit": "^0.14.1",
     "@charrue/vite-plugin-pages": "^0.28.0",
     "@charrue/vite-plugin-pages-extend": "^0.1.0",
     "@charrue/vite-plugin-vue-layouts": "^0.8.0",
@@ -88,12 +87,14 @@
     "unplugin-icons": "^0.15.3",
     "unplugin-vue-components": "^0.22.12",
     "unplugin-vue-define-options": "^1.3.2",
+    "vite": "4.2.1",
     "vite-plugin-inspect": "^0.7.18",
     "vue": "3.2.47",
-    "vite": "4.2.1",
     "vue-router": "4.1.6"
   },
   "devDependencies": {
+    "@charrue/toolkit": "^0.14.1",
+    "@charrue/types": "^0.1.0",
     "@charrue/vitest-service": "^0.0.2",
     "@types/element-resize-detector": "^1.1.3",
     "@types/js-cookie": "^3.0.3",

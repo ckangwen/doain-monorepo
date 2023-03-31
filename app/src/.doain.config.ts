@@ -20,16 +20,20 @@ export default defineClientConfig({
         title: "UserInfo",
       },
       {
-        title: "Demo01",
-        path: "/demo/demo01",
+        title: "List",
+        path: "/demo/list",
       },
       {
-        title: "Demo02",
-        path: "/demo/demo02",
+        title: "Form",
+        path: "/demo/form",
       },
       {
-        title: "Demo03",
+        title: "User",
         path: "/demo/user",
+      },
+      {
+        title: "CrudPage",
+        path: "/demo/crud",
       },
     ],
     transitionName: "doain-zoom-fade",

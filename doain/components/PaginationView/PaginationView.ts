@@ -6,9 +6,9 @@ import { useVModel } from "@vueuse/core";
 import { vLoading } from "element-plus";
 import { ExtractPropTypes, PropType, computed, defineComponent, h, ref, withDirectives } from "vue";
 
-import { DoainClientConfig } from "../../config/index";
 import { useInternalPaginationView } from "./usePaginationView";
 import { useTable } from "./useTable";
+import { DoainClientConfig } from "../../config/index";
 
 type DFormProps = NonNullable<
   NonNullable<NonNullable<DoainClientConfig["component"]>["paginationView"]>["formProps"]
@@ -183,6 +183,7 @@ export const PaginationView = defineComponent({
               ],
             ),
 
+        this.shouldHideForm ? null : h("div", { class: "pagination-view__space" }),
         h(
           "div",
           {

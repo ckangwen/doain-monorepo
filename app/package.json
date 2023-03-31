@@ -14,11 +14,12 @@
     "@charrue/schema-form-next": "^1.0.1",
     "@charrue/schema-table-next": "^1.0.3",
     "@charrue/toolkit": "^0.14.1",
-    "element-plus": "2.1.11",
+    "@tanstack/vue-query": "^4.27.0",
+    "doain": "workspace:*",
+    "element-plus": "^2.3.1",
     "pinia": "2.0.33",
     "vue": "3.2.47",
-    "vue-router": "4.1.6",
-    "doain": "workspace:*"
+    "vue-router": "4.1.6"
   },
   "devDependencies": {
     "@vue-macros/volar": "^0.9.3",

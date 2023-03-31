@@ -2,6 +2,7 @@ import { PageNotFound } from "doain/components";
 import { setupLayouts } from "virtual:generated-layouts";
 import generatedRoutes from "virtual:generated-pages";
 import { createRouter, createWebHashHistory } from "vue-router";
+import { registerTokenGuard, registerUserGuard } from "./guards";
 
 const routes = setupLayouts(generatedRoutes);
 
@@ -21,5 +22,8 @@ const router = createRouter({
 
   routes,
 });
+
+registerTokenGuard(router);
+registerUserGuard(router);
 
 export default router;

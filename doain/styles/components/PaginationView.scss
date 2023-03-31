@@ -12,10 +12,18 @@
     flex-wrap: wrap;
     justify-content: space-between;
   }
+
   .charrue-schema-field-item {
     width: var(--doain-pagination-form-width, 200px);
   }
 }
+
+.charrue-schema-form-root--default {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
 
 .pagination-view__table {
   $table-border-radius: 6px;
@@ -26,12 +34,14 @@
   padding: var(--doain-pagination-table-padding);
 
   .el-table {
-    border-radius: calc( #{$table-border-radius} - 1px );
+    border-radius: calc(#{$table-border-radius} - 1px);
     --el-table-border-color: rgba(239, 239, 245, 1);
   }
+
   .el-table__inner-wrapper::before {
     display: none;
   }
+
   .charrue-schema-table-body {
     border: 1px solid rgba(239, 239, 245, 1);
     border-bottom: 0;
@@ -45,10 +55,15 @@
       --el-table-header-bg-color: rgba(250, 250, 252, 1);
     }
   }
+
   .el-pagination {
     --el-pagination-button-height: #{$pagination-size};
     --el-pagination-button-width: #{$pagination-size};
     --el-component-size: #{$pagination-size};
     --el-input-height: #{$pagination-size};
+  }
+
+  .charrue-schema-table-pagination {
+    margin-top: 20px;
   }
 }

@@ -5,3 +5,5 @@ dist
 !.vscode/extensions.json
 .idea
 .history
+docs
+tmp

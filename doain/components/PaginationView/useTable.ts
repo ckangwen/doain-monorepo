@@ -102,29 +102,21 @@ export const useTable = (queryData?: ComputedRef<Record<string, any>>) => {
   );
 
   const onSizeChange = (size: number) => {
-    if (size) {
-      pageSize.value = size;
-      page.value = 1;
-    }
-
     router.push({
       path: route.path,
       query: {
         ...route.query,
         size,
+        page: 1,
       },
     });
   };
   const onPageChange = (p: number) => {
-    if (p) {
-      page.value = p;
-    }
-
     router.push({
       path: route.path,
       query: {
         ...route.query,
-        page: p,
+        page: p || 1,
       },
     });
   };

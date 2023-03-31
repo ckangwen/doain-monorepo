@@ -98,7 +98,11 @@ export const GlobalHeaderRight = defineComponent({
             return h("div", null, [h("span", { class: "login-name" }, username)]);
           },
           dropdown() {
-            return h(ElDropdownMenu, null, [h(ElDropdownItem, { command: "logout" }, "退出登录")]);
+            return h(ElDropdownMenu, null, {
+              default() {
+                return [h(ElDropdownItem, { command: "logout" }, "退出登录")];
+              },
+            });
           },
         },
       ),
