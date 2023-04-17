@@ -100,7 +100,17 @@ export const GlobalHeaderRight = defineComponent({
           dropdown() {
             return h(ElDropdownMenu, null, {
               default() {
-                return [h(ElDropdownItem, { command: "logout" }, "退出登录")];
+                return [
+                  h(
+                    ElDropdownItem,
+                    { command: "logout" },
+                    {
+                      default() {
+                        return "退出登录";
+                      },
+                    },
+                  ),
+                ];
               },
             });
           },

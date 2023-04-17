@@ -1,4 +1,5 @@
 import userDoainConfig from "~doain/config";
+import Compressor from "compressorjs";
 
 import {
   ElNotification,
@@ -19,6 +20,21 @@ interface UploadImageState {
   uploadPercentage: number;
 }
 
+const compressImagePromise = (file: File, quality: number): Promise<File> => {
+  return new Promise<File>((resolve, reject) => {
+    // eslint-disable-next-line no-new
+    new Compressor(file, {
+      quality,
+      success(result) {
+        resolve(new File([result], file.name));
+      },
+      error(err) {
+        reject(err);
+      },
+    });
+  });
+};
+
 const uploadWarning = (message: string) => {
   ElNotification.warning({
     title: "提示",
@@ -27,7 +43,7 @@ const uploadWarning = (message: string) => {
   });
 };
 
-export const DEFAULT_IMAGE_ACCEPT = "image/gif, image/jpeg, image/png";
+export const DEFAULT_IMAGE_ACCEPT = "image/gif, image/jpeg, image/png, image/jpg";
 
 export const useDoainUpload = () => {
   const formDataProp = useProp<Record<string, any>>("formData", {});
@@ -95,18 +111,21 @@ export const useDoainUpload = () => {
     return true;
   };
 
-  const httpRequest: UploadRequestHandler = (params: UploadRequestOptions) => {
+  const httpRequest: UploadRequestHandler = async (params: UploadRequestOptions) => {
     if (!userDoainConfig.component?.upload?.url) {
-      return Promise.reject(new Error("请配置上传地址: 'component.upload.url'"));
+      throw new Error("请配置上传地址: 'component.upload.url'");
     }
 
     const formData = new FormData();
+
     Object.keys(formDataProp.value!).forEach((key) => {
       const propValue = formDataProp.value![key];
       if (propValue === undefined) return;
       formData.append(key, formDataProp.value![key]);
     });
-    formData.append(uploadNameProp.value!, params.file);
+    const compressFile = await compressImagePromise(params.file, 0.8);
+    console.log(compressFile, compressFile.size, params.file.size);
+    formData.append(uploadNameProp.value!, compressFile);
 
     return httpClient
       .request({
