@@ -1,28 +1,8 @@
-<script setup lang="ts">
-import { ref } from "vue";
-import { useRouter } from "vue-router";
-
-defineOptions({
-  name: "Demo01",
-});
-
-const value = ref();
-const keepAliveRoutes = useRouter()
-  .getRoutes()
-  .filter((route) => route.meta?.keepAlive)
-  ?.map((route) => {
-    if (typeof route.name === "string") return route.name;
-    return "";
-  })
-  ?.filter((name) => name);
-console.log(keepAliveRoutes);
-</script>
+<script setup lang="ts"></script>
 
 <template>
   <div class="h-full">
-    <h1>Demo01</h1>
-
-    <el-input v-model="value" />
+    <editor></editor>
   </div>
 </template>
 

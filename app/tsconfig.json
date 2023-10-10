@@ -1,7 +1,11 @@
 {
-  "extends": "@vue/tsconfig/tsconfig.web.json",
   "compilerOptions": {
     "baseUrl": ".",
+    "lib": [
+      "ES2016",
+      "DOM",
+      "DOM.Iterable"
+    ],
     "skipLibCheck": true,
     "paths": {
       "@/*": ["src/*"],
@@ -10,7 +14,18 @@
     },
     "types": [
       "doain/client",
-    ]
+    ],
+    "module": "ESNext",
+    "moduleResolution": "Node",
+    "resolveJsonModule": true,
+    "useDefineForClassFields": true,
+    "jsx": "preserve",
+    "noImplicitThis": true,
+    "strict": true,
+    "isolatedModules": true,
+    "target": "ESNext",
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
   },
   "include": ["./src/**/*.ts", "./src/**/*.d.ts", "./src/**/*.tsx", "./src/**/*.vue", "./*.ts",],
   "exclude": ["node_modules"],

@@ -1,6 +1,9 @@
 import DoainPlugin from "doain/node";
 import { defineConfig } from "vite";
 
-export default defineConfig({
+const config = defineConfig({
+  base: "./",
   plugins: [DoainPlugin()],
 });
+
+export default config;

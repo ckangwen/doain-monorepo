@@ -15,6 +15,8 @@
     "@charrue/schema-table-next": "^1.0.3",
     "@charrue/toolkit": "^0.14.1",
     "@tanstack/vue-query": "^4.27.0",
+    "@wangeditor/editor": "^5.1.23",
+    "@wangeditor/editor-for-vue": "^5.1.12",
     "doain": "workspace:*",
     "element-plus": "^2.3.1",
     "pinia": "2.0.33",
@@ -23,7 +25,6 @@
   },
   "devDependencies": {
     "@vue-macros/volar": "^0.9.3",
-    "@vue/tsconfig": "^0.1.3",
     "sass": "^1.57.1",
     "vite": "4.2.1"
   }
