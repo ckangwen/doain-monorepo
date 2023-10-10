@@ -12,7 +12,7 @@ import IconsPlugin from "unplugin-icons/vite";
 import { ElementPlusResolver } from "unplugin-vue-components/resolvers";
 import VueComponentsPlugin from "unplugin-vue-components/vite";
 import type { Options as VueDefineOptionsOptions } from "unplugin-vue-define-options";
-import VueDefineOptions from "unplugin-vue-define-options/vite";
+import VueDefineOptions from "unplugin-vue-define-options/dist/vite";
 import { defineConfig as defineViteConfig, mergeConfig } from "vite";
 import type { PluginOption } from "vite";
 
@@ -136,7 +136,9 @@ export const plugins = [
   VueDefineOptions(defaultVueDefineOptions),
 ];
 
-export const DoainNodePlugin = (options: PluginOptions = {}): PluginOption => {
+export const DoainNodePlugin: (options?: PluginOptions) => PluginOption = (
+  options: PluginOptions = {},
+): PluginOption => {
   let userConfigFiles: string[] = [];
 
   function mergeBuiltPluginOptions<N extends keyof BuiltPlugins>(

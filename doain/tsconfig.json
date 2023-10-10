@@ -11,6 +11,9 @@
     "./*.d.ts"
   ],
   "compilerOptions": {
+    "declaration": true,
+    "declarationMap": true,
+    "baseUrl": ".",
     "types": [
       "@charrue/vite-plugin-vue-layouts/client",
       "@charrue/vite-plugin-pages/client",
